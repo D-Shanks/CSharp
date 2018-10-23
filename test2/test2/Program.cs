@@ -12,22 +12,8 @@ namespace test2
     {
         static void Main(string[] args)
         {
-            string fileName = @"D:\Program Files\VS2017_workplace\C#_Git_Work\CSharp\test2\科研细则.docx";
-            using (WordprocessingDocument wordprocessingDocument =
-                WordprocessingDocument.Open(fileName, false))
-            {
-                // Create a Body object.
-                DocumentFormat.OpenXml.Wordprocessing.Body body =
-                    wordprocessingDocument.MainDocumentPart.Document.Body;
-                
-                // Get the Run elements after the specified element.
-                Console.WriteLine("Run elements after the first child are: ");
-                foreach (var paragraph in body.Elements())
-                {
-                    Console.WriteLine(paragraph.InnerText);
-                }
-                Console.ReadKey();
-            }
+            ReadWord R = new ReadWord();
+            R.read();
         }
     }
 }
